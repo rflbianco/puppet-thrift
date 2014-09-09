@@ -9,4 +9,12 @@
 # Learn more about module testing here:
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-include thrift
+thrift { '0.8.0':
+  version         => '0.8.0',
+  default_version => false,
+  prefix          => '/usr'
+}
+
+thrift { 'latest':
+  prefix => '/usr'
+}

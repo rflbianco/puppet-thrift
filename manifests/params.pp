@@ -3,6 +3,8 @@
 class thrift::params {
   $version = '0.9.1'
   $base_url = 'https://archive.apache.org/dist/thrift'
+  $prefix = '/usr/local'
+
   $yum_pkgs = [
     'boost-devel',
     'boost-test',
