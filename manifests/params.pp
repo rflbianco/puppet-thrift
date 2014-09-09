@@ -36,13 +36,26 @@ class thrift::params {
     'libcommons-lang3-java',
   ]
 
+  $macports_pkgs = [
+    'boost',
+    'libevent',
+  ]
+
   case $::osfamily {
     'RedHat', 'Amazon': {
       $pkgs = $yum_pkgs
+      $pkg_manager = 'yum'
     }
 
     'Debian': {
       $pkgs = $apt_pkgs
+      $pkg_manager = 'apt'
+
+    }
+
+    'Darwin': {
+      $pkgs = $macports_pkgs
+      $pkg_manager = 'macports'
     }
 
     default: {

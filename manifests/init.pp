@@ -82,7 +82,7 @@ define thrift (
   validate_array($__pkgs)
 
   case $::osfamily {
-    'RedHat', 'Amazon', 'Debian': {
+    'RedHat', 'Amazon', 'Debian', 'Darwin': {
     }
     default: {
       fail("${::osfamily} not supported")
@@ -92,7 +92,8 @@ define thrift (
   $app_name = "thrift-${__version}"
 
   thrift::dependencies { $app_name:
-    pkgs   => $__pkgs,
+    pkgs        => $__pkgs,
+    pkg_manager => $thrift::params::pkg_manager
   }
 
   thrift::install { $app_name:
