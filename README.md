@@ -10,6 +10,7 @@
     * [Beginning with thrift](#beginning-with-thrift)
 4. [Usage](#usage)
 5. [Reference](#reference)
+    * [Defined Type: thrift](#defined-type-thrift)
 5. [Limitations](#limitations)
 6. [Development](#development)
 
@@ -80,11 +81,9 @@ thrift { '0.8.0':
 
 ## Reference
 
-### Public Defined Types
+### Defined Type: `thrift`
 
-#### Defined Type: `thrift`
-
-Define that downloads, compiles and installs a given version of Apache Thrift compiler.
+Downloads, compiles and installs a given version of Apache Thrift compiler.
 On installation adds the `thrift-$VERSION` to system `$PATH`.
 A symlink to a default version as 'thrift' (only) can be added to system `$PATH` passing
 the expected parameter.
@@ -105,10 +104,10 @@ thrift { '0.8.0':
  default => false
 }
 ```
-
+#### Parameters within `thrift`
 ##### `prefix`
 Overrides the default folders where Thrift compiler is installed.
-The default is '/usr/local', installing thrift into:
+The default is `/usr/local`, installing thrift into:
 - /usr/local/bin
 - /usr/local/lib
 - /usr/local/share/doc
@@ -118,7 +117,7 @@ The Thrift compiler version to be is installed. The default is the latest (0.9.2
 
 ##### `default`
 Whether this is the system's default version of Thrift compiler.
-It creates a symlink 'thrift-$VERSION -> thrift' into $PREFIX/bin.
+It creates a symlink `thrift-$VERSION` -> `thrift` into `$PREFIX/bin`.
 The default value is TRUE.
 
 ## Limitations
@@ -133,7 +132,7 @@ If you like this Puppet module, but thinks you can improve it, please read our [
 
 ## Contributors
 
-The list of contributors can be found at: https://github.com/instituto-stela/puppet-thrit/graphs/contributors.
+The list of contributors can be found at: https://github.com/instituto-stela/puppet-thrift/graphs/contributors.
 
 
 [constributing-code-guide]: https://github.com/instituto-stela/guidelines/opensource/contributing.md
